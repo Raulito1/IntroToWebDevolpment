@@ -16,9 +16,15 @@
         <!-- Bootstrap core CSS -->
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet"> 
         <link href="${pageContext.request.contextPath}/css/myCss.css" rel="stylesheet">
-        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-       <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-       <script>tinymce.init({selector: 'textarea'});</script>
+        <script src="https://cdn.tiny.cloud/1/3mcr2ezgssioqqi3o00foz13922twjp48ughhe14gc4741nb/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: '#textarea',
+                plugins: 'save',
+                toolbar: 'save'
+            });
+      
+        </script>
     </head>
   </script>
     </head>
@@ -82,7 +88,7 @@
                     <input type="hidden" 
                            name="${_csrf.parameterName}" 
                            value="${_csrf.token}"/>
-                    <label for="submit">
+                    <label for="submit" style="color: whitesmoke;">
                         Hello : ${pageContext.request.userPrincipal.name}&nbsp;&nbsp;&nbsp;|
                     </label>
                     <button class="btn btn-link" 
@@ -97,11 +103,11 @@
                        value="${_csrf.token}"/>
                 <div class="form-group">
                     <label for="title" id="blogTitle">Blog Title</label>
-                    <input type="text" class="form-control" name="title" placeholder="Title Your Blog HERE!!" required>
+                    <input id="blog-title" type="text" class="form-control" name="title" placeholder="Title Your Blog HERE!!" required>
                 </div>
                 <div class="form-group">
-                    <label for="category" id="blogTitle">Category</label>
-                    <select style="width: 100%" class="form-control" name="category">
+                    <label for="category" >Category</label>
+                    <select id="category-name" style="width: 100%" class="form-control" name="category">
                         <option selected value="">Select A Category</option>
                         <c:forEach var="currentCat" items="${categoryList}">
                             <option name="cat" value="${currentCat.categoryId}">${currentCat.name}</option>
@@ -109,28 +115,24 @@
                     </select>
                 </div>
                 <div class="form-group">                
-                    <textarea  class="tinymce"  id="texteditor" rows="15" name="content" placeholder="Insert Your Blog HERE!!" required></textarea>
-                    <input type="submit" value="getData">
+                    <textarea  id="textarea" rows="15" name="textarea" placeholder="Insert Your Blog HERE!!" required></textarea>
+                   
                 </div>
                 <div class="form-group"><br/>
-                    <label for="tags" id="blogTitle">Tags</label>
-                    <input type="text" class="form-control" name="tags" id="tag" placeholder="Add Your (#)TAGS!!">
+                    <label for="tags" id="blogTag">Tags</label>
+                    <input type="text" class="form-control" name="tags" id="blog-tag" placeholder="Add Your (#)TAGS!!">
                     <button type="button" id="tag-btn" name="tag-btn">Tag</button>
                     <div id="tagDiv"></div>
                 </div><br/>
-                <button type="submit" class="submit-btn" name="submitBlog" id="saveBtn">Submit Blog</button>  
+                <button type="submit" class="btn btn-success" name="submitBlog" id="saveBtn">Submit Blog</button>  
             </form>
         </div>
-         <script>
-            $('#saveBtn').on('click' function(){
-            tinyMCE.triggerSave();
-            });
-        </script>
-   
+                
 
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/tags.js"></script>
+        <script src="${pageContext.request.contextPath}/js/post.js"></script>
     </body>
 </html>

@@ -70,7 +70,7 @@ public class CategoryController {
         int categoryId = Integer.parseInt(categoryIdParameter);
         Category category = dao.getCategoryById(categoryId);
         model.addAttribute("category", category);
-        return "editcategoryForm";
+        return "editCategoryForm";
     }
     
     @RequestMapping(value = "editCategory" , method = RequestMethod.POST)

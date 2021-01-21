@@ -78,7 +78,7 @@
                     <input type="hidden" 
                            name="${_csrf.parameterName}" 
                            value="${_csrf.token}"/>
-                    <label for="submit">
+                    <label for="submit" style="color: whitesmoke;">
                         Hello : ${pageContext.request.userPrincipal.name}&nbsp;&nbsp;&nbsp;|
                     </label>
                     <button class="btn btn-link" 

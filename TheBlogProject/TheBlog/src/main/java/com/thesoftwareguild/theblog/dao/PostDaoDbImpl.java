@@ -38,8 +38,8 @@ public class PostDaoDbImpl implements PostDao {
     //======== SQL STATEMENTS ============
     // CREATE ==============
     private static final String SQL_INSERT_POST
-            = "insert into post(title, post_date, content, user_id, state, reference_id, category_id) "
-            + "values(?,?,?,?,?,?,?)";
+            = "INSERT INTO Post (title, post_date, content, state, reference_id, category_id) "
+            + "values (?,?,?,?,?,?)";
     // Create == insert values into join table post_tag
     
     private static final String SQL_INSERT_POST_TAG
@@ -113,7 +113,7 @@ public class PostDaoDbImpl implements PostDao {
                     post.getTitle(),
                     post.getPostDate(),
                     post.getContent(),
-                    post.getUser().getUserId(),
+                    //post.getUser().getUserId(),
                     post.getState(),
                     (post.getReferencedPost() == null)? null : post.getReferencedPost().getPostId(),
                     (post.getCategory() == null) ? null : post.getCategory().getCategoryId());
@@ -191,19 +191,19 @@ public class PostDaoDbImpl implements PostDao {
         
     }
     //=============== HELPER METHODS =====================
-    private void populatePost(List<Post> post) {
-        for (Post p : post) {
+    private void populatePost(List<Post> posts) {
+        for (Post p : posts) {
             p.setCategory(getCategoryByPostId(p.getPostId()));
             p.setTags(getTagsByPostId(p.getPostId()));
-            User user = getUserByPostId(p.getPostId());
-            user.setRoles(getRolesForUserByUserId(user.getUserId()));
-            p.setUser(user);
+            User u = getUserByPostId(p.getPostId());
+            u.setRoles(getRolesForUserByUserId(u.getUserId()));
+            p.setUser(u);
             Post rp = getReferencedPostByPostId(p.getPostId());
             if (rp != null) {
                 rp.setCategory(getCategoryByPostId(rp.getPostId()));
-                User u = getUserByPostId(rp.getPostId());
-                u.setRoles(getRolesForUserByUserId(u.getUserId()));
-                rp.setUser(u);
+                User ru = getUserByPostId(rp.getPostId());
+                ru.setRoles(getRolesForUserByUserId(ru.getUserId()));
+                rp.setUser(ru);
                 rp.setTags(getTagsByPostId(rp.getPostId()));
             }
             p.setReferencedPost(rp);
