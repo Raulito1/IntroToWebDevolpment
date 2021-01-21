@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 18, 2021, 9:36:27 PM
+    Author     : raulalvarado
+*/
+
+body {
+       
+    background-image: url('../images/stadium.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav {
+    background-color: #41533b; 
+}
+
+.active,
+.active:hover,
+a.nav-link:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    color: whitesmoke;
+    font-family: chalkduster, fantasy;
+    text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+}
+
+.scrolling-container {
+    height: 500px; 
+    overflow: scroll; 
+}
+
+/***********************************************************
+LOGIN PAGE
+***********************************************************/
+
+#login-form {
+    max-width: 767px; 
+}
+
+
+/***********************************************************
+HOME PAGE
+***********************************************************/
+
+div.featured-item-div {
+    width: 250px; 
+    height: 300px; 
+    
+}
+
+a {
+    color: whitesmoke;
+    font-family: chalkduster, fantasy;
+    text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
+    
+}
+
+#mceu_15 {
+    margin: 0 auto; 
+}
