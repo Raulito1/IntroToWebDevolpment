@@ -20,7 +20,7 @@
         <!--custom CSS-->
         <link rel="stylesheet" href="css/customStyles.css">
         <style>
-            .form-group, .form-control, .list-group-item, .btn {
+            .form-group, .form-control, .list-group-item, .btn,h4 {
                 color: whitesmoke;
                 font-family: chalkduster, fantasy;
                 text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;
@@ -78,8 +78,8 @@
                 <div style="color: whitesmoke;
                 font-family: chalkduster, fantasy;
                 text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black;">
-                <p>A very small stage in a vast cosmic arena corpus callosum brain is the seed of intelligence another world permanence of the stars shores of the cosmic ocean. At the edge of forever the sky calls to us courage of our questions at the edge of forever hearts of the stars hundreds of thousands. A still more glorious dawn awaits Sea of Tranquility a mote of dust suspended in a sunbeam emerged into consciousness great turbulent clouds take root and flourish and billions upon billions upon billions upon billions upon billions upon billions upon billions.</p>
-            </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Varius duis at consectetur lorem donec massa. Ut tortor pretium viverra suspendisse potenti. Ac tortor vitae purus faucibus ornare suspendisse sed. Risus viverra adipiscing at in tellus integer. Dignissim enim sit amet venenatis urna cursus eget. Elit ut aliquam purus sit amet luctus venenatis lectus magna. At varius vel pharetra vel turpis nunc. Facilisi cras fermentum odio eu. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam. Tortor dignissim convallis aenean et tortor at. Ullamcorper velit sed ullamcorper morbi. Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam.</p>
+                </div>
 
                 <div class="featured-items-container" style="color: whitesmoke;
                 font-family: chalkduster, fantasy;
