@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sg.addressbook;
+package com.sg.classroster.dao;
 
 /**
  *
  * @author raulalvarado
  */
-public class App {
+public interface ClassRosterAuditDao {
     
+    public void writeAuditEntry(String entry) throws ClassRosterPersistenceException;
 }
