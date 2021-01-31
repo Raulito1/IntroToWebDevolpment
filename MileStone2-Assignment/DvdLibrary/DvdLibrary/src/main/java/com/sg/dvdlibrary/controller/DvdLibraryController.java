@@ -39,19 +39,19 @@ public class DvdLibraryController {
                 
                 switch (menuSelection) {
                     case 1:
-                        createDvd();
+                        listOfDvds();
                         break;
                     case 2:
-                        removeDvd();
+                        createDvd();
                         break;
                     case 3:
-                        listOfDvds();
+                        viewDvd();
                         break;
                     case 4:
                         editDvd();
                         break;
                     case 5:
-                        searchADvd();
+                        editDvd();
                         break;
                     case 6:
                         keepGoing = false;
@@ -83,18 +83,13 @@ public class DvdLibraryController {
         view.displayDvdList(dvdList);
     }
     
-    private void searchADvd() throws DvdLibraryDaoException {
-        view.displaySearchDvdBanner();
-        String dvdSearch = view.getDvdTitle();
-        Dvd dvd = dao.searchDvd(dvdSearch);
-        view.searchDvd(dvd);
-    }
-    
     private void editDvd() throws DvdLibraryDaoException {
         view.editDvdBanner();
-        String dvdSearch = view.getDvdTitle();
-        Dvd dvd = dao.searchDvd(dvdSearch);
-        view.editDvd(dvd);
+        String dvdTitle = view.getDvdTitleChoice();
+        Dvd firstDvd = dao.getDvd(dvdTitle);
+        Dvd editedDvd = view.editDvd(firstDvd);
+        dao.editDvd(editedDvd.getTitle(), editedDvd);
+        view.editSuccessBanner();
     }
     
     private void removeDvd() throws DvdLibraryDaoException {
@@ -102,6 +97,13 @@ public class DvdLibraryController {
         String dvdId = view.getDvdTitle();
         dao.deleteDvd(dvdId);
         view.displaySuccessRemoveDvdBanner();
+    }
+    
+    public void viewDvd() throws DvdLibraryDaoException {
+        view.displayDvdBanner();
+        String title = view.getDvdTitleChoice();
+        Dvd dvd = dao.getDvd(title);
+        view.displayDvd(dvd);
     }
     
     private void exitMessage() {

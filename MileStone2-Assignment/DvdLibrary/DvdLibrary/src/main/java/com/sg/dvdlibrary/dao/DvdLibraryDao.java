@@ -23,23 +23,31 @@ public interface DvdLibraryDao {
     Dvd addDvd(String dvdId, Dvd dvd) throws DvdLibraryDaoException;
     /**
      * 
-     * @return
+     * @returna list of dvd stored in txt file
      * @throws DvdLibraryDaoException 
      */
     List<Dvd> getAllDvds() throws DvdLibraryDaoException;
     /**
      * 
      * @param dvdId
-     * @return
+     * @return dvd to remove
      * @throws DvdLibraryDaoException 
      */
-    Dvd deleteDvd(String dvdId) throws DvdLibraryDaoException;
+    Dvd deleteDvd(String title) throws DvdLibraryDaoException;
     /**
      * 
-     * @param dvdTitle
-     * @return
+     * @param title
+     * @return a single Dvd
      * @throws DvdLibraryDaoException 
      */
-    Dvd searchDvd(String dvdTitle) throws DvdLibraryDaoException;
+    Dvd getDvd(String title) throws DvdLibraryDaoException; 
+    /**
+     * 
+     * @param title
+     * @param dvd
+     * @return dvd selected to edit by dvd title
+     * @throws DvdLibraryDaoException 
+     */
+    Dvd editDvd(String title, Dvd dvd) throws DvdLibraryDaoException;
     
 }

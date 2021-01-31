@@ -30,9 +30,13 @@ public class DvdLibraryDaoFileImpl implements DvdLibraryDao {
     
 
     @Override
-    public Dvd addDvd(String dvdId, Dvd dvd) throws DvdLibraryDaoException {
-        Dvd newDvd = dvds.put(dvdId, dvd);
+    public Dvd addDvd(String title, Dvd dvd) throws DvdLibraryDaoException {
+        Dvd newDvd = dvds.put(title, dvd);
+        try {
         writeLibrary();
+        } catch (DvdLibraryDaoException e) {
+            e.printStackTrace();
+        }
         return newDvd;
     }
 
@@ -45,14 +49,26 @@ public class DvdLibraryDaoFileImpl implements DvdLibraryDao {
     @Override
     public Dvd deleteDvd(String dvdId) throws DvdLibraryDaoException {
         Dvd removedDvd = dvds.remove(dvdId);
-        writeLibrary();
+        try {
+            writeLibrary();
+        } catch (DvdLibraryDaoException e) {
+            e.printStackTrace();
+        } 
         return removedDvd;
+    } 
+    
+     @Override
+    public Dvd getDvd(String title) throws DvdLibraryDaoException {
+        return dvds.get(title);
     }
 
     @Override
-    public Dvd searchDvd(String dvdTitle) throws DvdLibraryDaoException {
-        return dvds.get(dvdTitle);
+    public Dvd editDvd(String title, Dvd dvd) throws DvdLibraryDaoException {
+        dvds.put(title, dvd);
+        return dvd;
     }
+    
+
     
     private void loadLibrary() throws DvdLibraryDaoException {
         Scanner scanner;
@@ -70,8 +86,9 @@ public class DvdLibraryDaoFileImpl implements DvdLibraryDao {
         while (scanner.hasNextLine()) {
             currentLine = scanner.nextLine();
             currentTokens = currentLine.split(DELIMITER);
-            Dvd currentDvd = new Dvd();
-            currentDvd.setTitle(currentTokens[1]);
+            Dvd currentDvd = new Dvd(currentTokens[0]);
+            // currentDvd.setTitle(currentTokens[1]);
+            currentDvd.setReleaseDate(currentTokens[1]);
             currentDvd.setMpaaRating(currentTokens[2]);
             currentDvd.setDirectorName(currentTokens[3]);
             currentDvd.setStudio(currentTokens[4]);
@@ -94,13 +111,13 @@ public class DvdLibraryDaoFileImpl implements DvdLibraryDao {
         
         List<Dvd> dvdList = this.getAllDvds();
         for (Dvd currentDvd : dvdList) {
-            out.println(currentDvd.getDvdId() + DELIMITER
-                    + currentDvd.getTitle() + DELIMITER
+            out.println(currentDvd.getTitle() + DELIMITER
                     + currentDvd.getReleaseDate() + DELIMITER
                     + currentDvd.getMpaaRating() + DELIMITER
                     + currentDvd.getDirectorName() + DELIMITER
                     + currentDvd.getStudio() + DELIMITER
                     + currentDvd.getUserRating());
+            
             out.flush();
         }
         out.close();
