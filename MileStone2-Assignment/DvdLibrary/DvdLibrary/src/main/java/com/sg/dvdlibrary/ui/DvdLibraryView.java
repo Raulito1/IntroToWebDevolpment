@@ -148,8 +148,8 @@ public class DvdLibraryView {
         for (Dvd currentDvd : dvdList) {
             io.print(currentDvd.getDvdId() + "| " + currentDvd.getTitle() + "| " 
             + currentDvd.getReleaseDate() + "| " + currentDvd.getMpaaRating() + "| "
-            + currentDvd.getDirectorName() + "| " + currentDvd.getStudio() + "| "
-            + currentDvd.getUserRating());
+            + currentDvd.getDirectorName() + "| " + currentDvd.getStudio());
+            
         }
         io.readString("hit ENTER to continue");
     }
