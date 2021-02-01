@@ -16,6 +16,12 @@ public class Student {
     private String studentId;
     private String cohort;// JAVA or .NET + cohort month/year
     
+    @Override
+    public String toString() {
+        return "ID: " + studentId + " |Name: " + firstName + " "
+                + lastName + " |Cohort: " + cohort;
+    }
+    
     public Student(String studentId) {
         this.studentId = studentId;
     }
