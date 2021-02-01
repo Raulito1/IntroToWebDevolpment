@@ -49,7 +49,7 @@ public class DvdLibraryController {
                         viewDvd();
                         break;
                     case 4:
-                        editDvd();
+                        removeDvd();
                         break;
                     case 5:
                         editDvd();

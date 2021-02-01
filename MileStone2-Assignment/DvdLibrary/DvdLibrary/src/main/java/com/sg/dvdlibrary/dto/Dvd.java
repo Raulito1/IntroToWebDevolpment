@@ -21,6 +21,13 @@ public class Dvd {
     private String userRating;
     private int dvdId;
     
+    @Override
+    public String toString() {
+        return "Title: " + title + " |Release Date: " + releaseDate + 
+                " |Mpaa Rating " + mpaaRating + " |Director Name " +
+                directorName + " |Studio " + studio + " |User Rating " + userRating;
+    }
+    
     public Dvd(String title) {
         this.title = title;
     }

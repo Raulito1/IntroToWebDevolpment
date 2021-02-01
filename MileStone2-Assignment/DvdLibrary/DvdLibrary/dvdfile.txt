@@ -1,2 +1,0 @@
-Joe Dirt::01-02-2021::R::Jon Doe::Universal::great funny movie
-Titanic::1997::PG-13::James Cameron::Universal::Really sad and romantic
