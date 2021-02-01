@@ -5,10 +5,6 @@
  */
 package com.sg.dvdlibrary.service;
 
-import com.sg.dvdlibrary.dao.DvdLibraryAuditDao;
-import com.sg.dvdlibrary.dao.DvdLibraryAuditDaoStubImpl;
-import com.sg.dvdlibrary.dao.DvdLibraryDao;
-import com.sg.dvdlibrary.dao.DvdLibraryDaoStubImpl;
 import com.sg.dvdlibrary.dto.Dvd;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
@@ -19,6 +15,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -29,10 +27,17 @@ public class DvdLibraryServiceLayerTest {
     private DvdLibraryServiceLayer service;
     
     public DvdLibraryServiceLayerTest() {
-        DvdLibraryDao dao = new DvdLibraryDaoStubImpl();
-        DvdLibraryAuditDao auditDao = new DvdLibraryAuditDaoStubImpl();
+        // wire Service Layer with stub implementations of the Dao and
+        // Audit Dao
+        //DvdLibraryDao dao = new DvdLibraryDaoStubImpl();
+       // DvdLibraryAuditDao auditDao = new DvdLibraryAuditDaoStubImpl();
         
-        service = new DvdLibraryServiceLayerImpl(dao, auditDao);
+        //service = new DvdLibraryServiceLayerImpl(dao, auditDao);
+        
+        ApplicationContext ctx =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
+        service = 
+                ctx.getBean("serviceLayer", DvdLibraryServiceLayer.class);
     }
     
     @BeforeAll
