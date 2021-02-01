@@ -18,36 +18,36 @@ public interface DvdLibraryDao {
      * @param dvdId
      * @param dvd
      * @return
-     * @throws DvdLibraryDaoException 
+     * @throws DvdLibraryPersistenceException 
      */
-    Dvd addDvd(String dvdId, Dvd dvd) throws DvdLibraryDaoException;
+    Dvd addDvd(String dvdId, Dvd dvd) throws DvdLibraryPersistenceException;
     /**
      * 
      * @returna list of dvd stored in txt file
-     * @throws DvdLibraryDaoException 
+     * @throws DvdLibraryPersistenceException 
      */
-    List<Dvd> getAllDvds() throws DvdLibraryDaoException;
+    List<Dvd> getAllDvds() throws DvdLibraryPersistenceException;
     /**
      * 
      * @param dvdId
      * @return dvd to remove
-     * @throws DvdLibraryDaoException 
+     * @throws DvdLibraryPersistenceException 
      */
-    Dvd deleteDvd(String title) throws DvdLibraryDaoException;
+    Dvd deleteDvd(String title) throws DvdLibraryPersistenceException;
     /**
      * 
      * @param title
      * @return a single Dvd
-     * @throws DvdLibraryDaoException 
+     * @throws DvdLibraryPersistenceException 
      */
-    Dvd getDvd(String title) throws DvdLibraryDaoException; 
+    Dvd getDvd(String title) throws DvdLibraryPersistenceException; 
     /**
      * 
      * @param title
      * @param dvd
      * @return dvd selected to edit by dvd title
-     * @throws DvdLibraryDaoException 
+     * @throws DvdLibraryPersistenceException 
      */
-    Dvd editDvd(String title, Dvd dvd) throws DvdLibraryDaoException;
+    Dvd editDvd(String title, Dvd dvd) throws DvdLibraryPersistenceException;
     
 }

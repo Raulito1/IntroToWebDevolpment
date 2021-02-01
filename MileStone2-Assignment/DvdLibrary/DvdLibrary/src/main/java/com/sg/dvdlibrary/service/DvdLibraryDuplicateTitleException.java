@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sg.dvdlibrary.dao;
+package com.sg.dvdlibrary.service;
 
 /**
  *
  * @author raulalvarado
  */
-public class DvdLibraryDaoException extends Exception {
+public class DvdLibraryDuplicateTitleException extends Exception{
     
-    public DvdLibraryDaoException(String message) {
+    public DvdLibraryDuplicateTitleException(String message) {
         super(message);
     }
     
-    public DvdLibraryDaoException(String message, Throwable cause) {
+    public DvdLibraryDuplicateTitleException(String message, Throwable cause) {
         super(message, cause);
     }
 }
