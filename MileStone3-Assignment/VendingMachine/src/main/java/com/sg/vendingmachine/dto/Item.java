@@ -19,7 +19,13 @@ public class Item {
     private BigDecimal itemCost;
     private int itemQty;
     
+    public int purchaseItem() {
+        return itemQty;
+    }
     
+    public Item() {
+        
+    }
     
     public Item(String itemId) {
         this.itemId = itemId;

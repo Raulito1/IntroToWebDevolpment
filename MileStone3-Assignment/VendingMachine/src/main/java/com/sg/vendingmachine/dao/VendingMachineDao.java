@@ -5,10 +5,23 @@
  */
 package com.sg.vendingmachine.dao;
 
+import com.sg.vendingmachine.dto.Item;
+import com.sg.vendingmachine.service.NoItemInventoryException;
+import java.util.List;
+
 /**
  *
  * @author raulalvarado
  */
 public interface VendingMachineDao {
     
+    List<Item> getAllItems() throws VendingMachinePersistenceException;
+    
+    public void purchaseItem(String itemId) throws VendingMachinePersistenceException;
+    
+    Item getItem(String itemId) throws VendingMachinePersistenceException;
+    
+    Item reduceInventory(String itemId) throws 
+            VendingMachinePersistenceException,
+            NoItemInventoryException;
 }
