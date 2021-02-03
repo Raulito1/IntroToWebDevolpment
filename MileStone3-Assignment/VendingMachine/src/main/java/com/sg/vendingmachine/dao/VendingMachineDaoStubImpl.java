@@ -24,7 +24,7 @@ public class VendingMachineDaoStubImpl implements VendingMachineDao {
         // create and item to use for test purposes
         onlyItem = new Item();
         onlyItem.setItemId("A1");
-        onlyItem.setItemName("Gum");
+        onlyItem.setItemName("Snickers");
         onlyItem.setItemCost(new BigDecimal("1.99"));
         onlyItem.setItemQty(1);
         
