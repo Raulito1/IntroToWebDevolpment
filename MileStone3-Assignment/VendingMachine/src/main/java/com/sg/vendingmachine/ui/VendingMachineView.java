@@ -28,6 +28,7 @@ public class VendingMachineView {
     }
     
     public int printMenuAndGetSelection() {
+        io.print("");
         io.print("==== Main Menu ====");
         io.print("");//
         io.print("");// printed these out for spacing
@@ -82,6 +83,8 @@ public class VendingMachineView {
     }
     
     public void displayCurrentMoney(BigDecimal currentMoney) {
+        io.print("");
         io.print("You have " + currentMoney + " in the machine");
+        io.print("");
     }
 }
