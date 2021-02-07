@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vending Machine</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Vending Machine</h1>
+        <hr />
+        <div class="row">
+            <div class="col-9" id="itemPannel">
+                <!-- Item rows will be generated on the fly by javascript -->
+                <!-- 3 should be the number of items in a row, no more, no less -->
+                <!-- We will generate a complex statement
+                    <div class="col item">
+                        <div class="row itemPart itemNum">1</div>
+                        <div class="row itemPart">Snickers</div>
+                        <div class="row itemPart">$1.85</div>
+                        <div class="row itemPart itemQuantity">Qyantify Left: 9</div>
+                    </div> -->
+                <div class="row" id="itemRow">
+                    <!-- generated item go here -->
+                </div>
+            </div>
+
+            <div class="col-3" id="inputPannel">
+                <div class="pannel">
+                    <h3>Total $ In</h3>
+                    <div class="row">
+                        <input id="moneyInput" type="text" placeholder="0.00" readonly />
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary" id="addDollar">$Dollar</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" id="addQuarter">$Quater</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary" id="addDime">$Dime</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-secondary" id="addNickle">$Nickle</button>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="pannel">
+                    <h3>Messages</h3>
+                    <div class="row">
+                        <input id="messageInput" type="text" readonly>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label id="item">Item:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" id="itemChoice" readonly/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-secondary" id="makePurchase">Make Purchase</button>
+                    </div>
+                </div>
+                <hr />
+                <div class="pannel">
+                    <h3>Change</h3>
+                    <div class="row">
+                        <input id="changeInput" type="text" readonly>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-secondary" id="changeReturn">Return Change</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/home.js"></script>
+
+</body>

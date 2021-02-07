@@ -1,0 +1,48 @@
+/*
+*/
+
+h1, h1 {
+  text-align: center;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+.item {
+  background-color: white;
+  border: 1px solid black;
+  margin: 2em;
+  min-width: calc(200px - 32px);
+  max-width: 30%;
+}
+
+.itemPart {
+    display: block;
+    padding: .4em;
+    text-align: center;
+}
+
+.itemNum {
+    text-align: left;
+}
+
+.itemQuantity {
+    margin-top: 1em;
+}
+
+input {
+    text-align: center;
+}
+
+input,button {
+    width: 90%;
+    margin: 2px auto;
+    padding: .10em;
+    display: block;
+    text-align: center;
+}
+#item {
+  font-weight: bold;
+  font-size: 25px;
+}
