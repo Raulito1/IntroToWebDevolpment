@@ -5,10 +5,23 @@
  */
 package com.sg.flooringmastery.dao;
 
+import com.sg.flooringmastery.dto.Order;
+import java.time.LocalDate;
+import java.util.List;
+
 /**
  *
  * @author raulalvarado
  */
-public interface FlooringMasteryDao {
+public interface FlooringMasteryOrderDao {
     
+    List<Order> getOrders(LocalDate date) throws FlooringMasteryPersistenceException;
+    
+    Order addOrder(Order order)  throws FlooringMasteryPersistenceException;
+    
+    Order editOrder(Order editedOrder) throws FlooringMasteryPersistenceException;
+    
+    Order removeOrder(Order orderChosen) throws FlooringMasteryPersistenceException;
 }
+
+

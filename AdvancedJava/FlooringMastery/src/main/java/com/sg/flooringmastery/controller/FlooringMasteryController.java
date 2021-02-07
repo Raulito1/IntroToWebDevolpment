@@ -6,6 +6,7 @@
 package com.sg.flooringmastery.controller;
 
 import com.sg.flooringmastery.dao.FlooringMasteryPersistenceException;
+import com.sg.flooringmastery.dto.Order;
 import com.sg.flooringmastery.service.FlooringMasteryServiceLayer;
 import com.sg.flooringmastery.service.InvalidOrderNumberException;
 import com.sg.flooringmastery.service.OrderValidationException;
@@ -74,13 +75,13 @@ public class FlooringMasteryController {
         try {
             view.displayOrdersByDate(service.getOrders(date));
             view.displayDisplayContinueBanner();
-        } catch (FlooringMasteryInvalidOrderNumException e) {
+        } catch (InvalidOrderNumberException e) {
             view.displayErrorMessage(e.getMessage());
         }
     }
     
     private void addOrder() throws FlooringMasteryPersistenceException, OrderValidationException, StateValidationException, ProductValidationException {
-        OrderData order = service.addUpOrderData(view.getOrder());
+        Order order = service.addUpOrderData(view.getOrder());
         view.displayNewOrder(order);
         String userInput = view.askToSave();
         if (userInput.equalsIgnoreCase("Y")) {
@@ -98,9 +99,9 @@ public class FlooringMasteryController {
         try {
             LocalDate date = view.dateInput();
             int orderNum = view.enterOrderNum();
-            OrderData orderSaved = service.getSingleOrder(date, orderNum);
-            OrderData orderToBeEdited = view.editOrder(orderSaved);
-            OrderData orderUpdated = service.compareOrder(orderSaved, orderToBeEdited);
+            Order orderSaved = service.getSingleOrder(date, orderNum);
+            Order orderToBeEdited = view.editOrder(orderSaved);
+            Order orderUpdated = service.compareOrder(orderSaved, orderToBeEdited);
             view.displayEditOrderBanner();
             String userInput = view.askToSave();
             if (userInput.equalsIgnoreCase("Y")) {
@@ -123,7 +124,7 @@ public class FlooringMasteryController {
         try {
             view.displayOrdersByDate(service.getOrders(date));
             int orderNum = view.enterOrderNum();
-            OrderData order = service.getSingleOrder(date, orderNum);
+            Order order = service.getSingleOrder(date, orderNum);
             view.displayRemoveOrderBanner();
             view.displayNewOrder(order);
             String userInput = view.askRemoveOrder();
@@ -136,17 +137,17 @@ public class FlooringMasteryController {
             } else {
                 unknownCommand();
             }
-        } catch (FlooringMasteryInvalidOrderNumException e) {
+        } catch (InvalidOrderNumberException e) {
             view.displayErrorMessage(e.getMessage());
         }
     }
     
     private void unknownCommand() {
-        view.displayUnknownCommandBanner();
+        view.displayUnknownCommand();
     }
     
     private void exitMessage() {
         view.displayExitBanner();
     }
 }
-}
+

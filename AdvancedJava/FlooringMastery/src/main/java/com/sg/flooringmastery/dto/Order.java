@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Order {
     
     private LocalDate date;
-    private int orederNum;
+    private int orderNum;
     private String customerName;
     private String productType;
     private String stateAbbr;
@@ -37,12 +37,12 @@ public class Order {
         this.date = date;
     }
 
-    public int getOrederNum() {
-        return orederNum;
+    public int getOrderNum() {
+        return orderNum;
     }
 
-    public void setOrederNum(int orederNum) {
-        this.orederNum = orederNum;
+    public void setOrderNum(int orederNum) {
+        this.orderNum = orederNum;
     }
 
     public String getCustomerName() {
@@ -137,7 +137,7 @@ public class Order {
     public int hashCode() {
         int hash = 5;
         hash = 61 * hash + Objects.hashCode(this.date);
-        hash = 61 * hash + this.orederNum;
+        hash = 61 * hash + this.orderNum;
         hash = 61 * hash + Objects.hashCode(this.customerName);
         hash = 61 * hash + Objects.hashCode(this.productType);
         hash = 61 * hash + Objects.hashCode(this.stateAbbr);
@@ -164,7 +164,7 @@ public class Order {
             return false;
         }
         final Order other = (Order) obj;
-        if (this.orederNum != other.orederNum) {
+        if (this.orderNum != other.orderNum) {
             return false;
         }
         if (!Objects.equals(this.customerName, other.customerName)) {
