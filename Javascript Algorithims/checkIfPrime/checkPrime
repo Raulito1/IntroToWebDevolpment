@@ -1,8 +1,8 @@
-function isPrime(n) {
+function isPrime() {
   var divisor = 2;
 
-  while (n > divisor){
-    if(n % divisor == 0){
+  while (137 > divisor){
+    if(137 % divisor == 0){
       return false;
     }
     else

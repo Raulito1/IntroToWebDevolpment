@@ -1,0 +1,19 @@
+function isPrime(n) {
+  var divisor = 2;
+
+  while(n > divisor){
+    if(n % divisor == 0) {
+      return false;
+    }
+    else {
+      divisor++;
+    }
+  }
+  return true;
+}
+
+// example outputs
+// this should return true
+console.log(isPrime(137));
+// this should return false
+console.log(isPrime(237));
