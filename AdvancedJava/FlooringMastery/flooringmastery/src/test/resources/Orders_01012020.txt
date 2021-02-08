@@ -1,0 +1,7 @@
+OrderNum:CustomerName:State:TaxRateProduct Type:Area:CostPerSqFt:LaborCostPerSqFt:MaterialCost:LaborCost:Tax:Total
+9,Jhon Doe,IN,6.00,Laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+13,Jhon Doe,IN,6.00,Laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+17,Jhon Doe,IN,6.00,Laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+22,Jhon Doe,IN,6.00,Laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+27,Jhon Doe,IN,6.00,Laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+32,Jhon Doe,IN,6.00,Laminate,100,1.75,2.10,175.00,210.00,23.10,408.10

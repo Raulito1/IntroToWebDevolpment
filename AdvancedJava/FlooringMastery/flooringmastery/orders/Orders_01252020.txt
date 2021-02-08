@@ -1,0 +1,1 @@
+OrderNum:CustomerName:State:TaxRateProduct Type:Area:CostPerSqFt:LaborCostPerSqFt:MaterialCost:LaborCost:Tax:Total

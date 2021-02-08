@@ -1,0 +1,9 @@
+OrderNum:CustomerName:State:TaxRateProduct Type:Area:CostPerSqFt:LaborCostPerSqFt:MaterialCost:LaborCost:Tax:Total
+3,Jhonny,IN,6.00,laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+6,Jhonny,IN,6.00,laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+10,Jhonny,IN,6.00,laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+14,Jhonny,IN,6.00,laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+19,Jhonny,IN,6.00,laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+24,Jhonny,IN,6.00,laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+29,Jhonny,IN,6.00,laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
+34,Jhonny,IN,6.00,laminate,100,1.75,2.10,175.00,210.00,23.10,408.10
