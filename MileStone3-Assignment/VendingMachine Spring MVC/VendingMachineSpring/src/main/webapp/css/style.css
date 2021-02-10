@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 17, 2020, 7:46:06 PM
+    Author     : raulalvarado
+*/
+
+
+.dynamic-items {
+    font-family: Menlo;
+    font-size: 10em;
+    text-align: center;
+    background: Whitesmoke;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 5px -1px #000;
+    margin: 30px;
+}
+
+
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;                
+    background-color: gray;
+    height: 1px;
+}
+
+a {
+    color: black;
+    text-decoration: none !important;
+}
+
+.item-id {
+    font-family: Menlo;
+    font-size: 20em;
+    text-align: left;
+}
+
+.displays {
+    font-family: Menlo;
+    font-size: 18em;
+    height: 50px;
+    text-align: center;
+    background: Whitesmoke;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 5px -1px #000;
+    margin-bottom: 10px;
+}
+
+#change {
+    font-family: Menlo;
+    font-size: 18em;
+    height: 70px;
+    text-align: center;
+    background: Whitesmoke;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 5px -1px #000;
+}
+
+.btn-default {
+    font-size: 10em;
+    text-align: center;
+    margin: 10px;
+}
+
+#left-column {
+    align-content: center;
+    text-align: center;
+}
+
+#item-selection-label {
+    font-family: Menlo;
+    font-size: 18em;
+}
