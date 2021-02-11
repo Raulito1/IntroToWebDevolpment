@@ -189,45 +189,45 @@ public class SuperHeroSightingsDaoDbImpl implements SuperHeroSightingsDao {
         // SIGHTINGS QUERIES
         // =================================
         private static final String INSERT_SIGHTING
-                = "INSERT INTO Sighting (locationID, date) "
+                = "INSERT INTO sightings (locationID, date) "
                 + "VALUES (?, ?)";
 
         private static final String DELETE_SIGHTING
-                = "DELETE FROM Sighting WHERE sightingID = ?";
+                = "DELETE FROM sightings WHERE sightingID = ?";
 
         private static final String UPDATE_SIGHTING
-                = "UPDATE Sighting SET locationID = ?, date = ? "
+                = "UPDATE sightings SET locationID = ?, date = ? "
                 + "WHERE sightingID = ?";
 
         private static final String SELECT_SIGHTING
-                = "SELECT * FROM Sighting WHERE sightingID = ?";
+                = "SELECT * FROM sightings WHERE sightingID = ?";
 
         private static final String SELECT_ALL_SIGHTINGS
-                = "SELECT * FROM Sighting";
+                = "SELECT * FROM sightings";
 
         private static final String SELECT_PERSONS_BY_SIGHTING_ID
                 = "SELECT p.personID, p.name, p.description "
                 + "FROM Persons p "
-                + "JOIN Sightings_Persons sp ON p.personID = sp.personID "
+                + "JOIN sightings_persons sp ON p.personID = sp.personID "
                 + "WHERE sp.sightingID = ?";
 
         private static final String SELECT_LOCATION_BY_SIGHTING_ID
                 = "SELECT l.locationID, l.name, l.description, l.street, l.city, "
-                + "l.state, l.country, l.longitude, l.latitude FROM Locations l "
-                + "JOIN Sighting s ON l.locationID = s.locationID "
+                + "l.state, l.country, l.longitude, l.latitude FROM locations l "
+                + "JOIN sightings s ON l.locationID = s.locationID "
                 + "WHERE s.sightingID = ?";
 
         private static final String SELECT_SIGHTINGS_BY_DATE
-                = "SELECT sightingID, date FROM sighting WHERE date = ?";
+                = "SELECT sightingID, date FROM sightings WHERE date = ?";
 
         private static final String INSERT_SIGHTINGS_PERSONS
-                = "INSERT INTO SIGHTINGS_PERSONS (SightingID, PersonID) VALUES (?, ?)";
+                = "INSERT INTO sightings_persons (sightingId, personId) VALUES (?, ?)";
 
         private static final String DELETE_SIGHTINGS_PERSONS_BY_SIGHTING_ID
-                = "DELETE FROM Sightings_Persons WHERE sightingID = ?";
+                = "DELETE FROM Sightings_Persons WHERE sightingId = ?";
 
         private static final String SELECT_LAST_TEN_SIGHTINGS
-                = "SELECT * FROM Sighting "
+                = "SELECT * FROM sightings "
                 + "ORDER BY date DESC LIMIT 0,10";
     }
     // ===========================

@@ -47,14 +47,14 @@ public class SuperHeroSightingsController {
     // ===========================
     // SUPERHEROES 
     // ===========================
-    @RequestMapping(value = "/superheroes", method = RequestMethod.GET)
+    @RequestMapping(value = "/superheros", method = RequestMethod.GET)
     public String displaySuperheroesPage(Model model) {
         List<Superpower> superpowerList = dao.getAllSuperpowers();
         List<Person> personList = dao.getAllPersons();
 
         model.addAttribute("personList", personList);
         model.addAttribute("superpowerList", superpowerList);
-        return "superheroes";
+        return "superheros";
     }
 
     @RequestMapping(value = "/heroDetails", method = RequestMethod.GET)
@@ -86,7 +86,7 @@ public class SuperHeroSightingsController {
         person.setDescription(description);
         person.setSuperpowers(powerList);
         dao.addPerson(person);
-        return "redirect:superheroes";
+        return "redirect:superheros";
     }
 
     @RequestMapping(value = "/editPerson", method = RequestMethod.POST)
@@ -109,7 +109,7 @@ public class SuperHeroSightingsController {
         person.setDescription(description);
         person.setSuperpowers(powerList);
         dao.updatePerson(person);
-        return "redirect:superheroes";
+        return "redirect:superheros";
     }
 
     @RequestMapping(value = "/deleteHero", method = RequestMethod.GET)
@@ -117,7 +117,7 @@ public class SuperHeroSightingsController {
         String id = request.getParameter("personId");
         int personId = Integer.parseInt(id);
         dao.removePerson(personId);
-        return "redirect:superheroes";
+        return "redirect:superheros";
     }
     // =========================
     // SUPERPOWERS
