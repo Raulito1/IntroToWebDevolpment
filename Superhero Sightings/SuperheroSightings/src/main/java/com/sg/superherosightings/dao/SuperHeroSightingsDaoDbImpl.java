@@ -40,134 +40,134 @@ public class SuperHeroSightingsDaoDbImpl implements SuperHeroSightingsDao {
         // PERSONS QUERIES
         // =============================
         private static final String INSERT_PERSON
-                = "INSERT INTO Persons (name, description) "
+                = "INSERT INTO persons (name, description) "
                 + "VALUES (?, ?)";
 
         private static final String DELETE_PERSON
-                = "DELETE FROM Persons WHERE personID = ?";
+                = "DELETE FROM persons WHERE personId = ?";
 
         private static final String UPDATE_PERSON
-                = "UPDATE Persons SET name = ?, description = ? "
-                + "WHERE personID = ?";
+                = "UPDATE persons SET name = ?, description = ? "
+                + "WHERE personId = ?";
 
         private static final String SELECT_PERSON
-                = "SELECT * FROM Persons WHERE personID = ?";
+                = "SELECT * FROM persons WHERE personId = ?";
 
         private static final String SELECT_ALL_PERSONS
-                = "SELECT * FROM Persons";
+                = "SELECT * FROM persons";
 
         private static final String INSERT_PERSONS_SUPERPOWERS
-                = "INSERT INTO Persons_Superpowers (personID, superpowerID) "
+                = "INSERT INTO persons_superpowers (personId, superpowerId) "
                 + "VALUES (?, ?)";
 
         private static final String DELETE_PERSONS_SUPERPOWERS_BY_PERSON_ID
-                = "DELETE FROM Persons_Superpowers WHERE personID = ?";
+                = "DELETE FROM persons_superpowers WHERE personId = ?";
 
         private static final String DELETE_PERSONS_ORGANIZATIONS_BY_PERSON_ID
-                = "DELETE FROM Persons_Organizations WHERE personID = ?";
+                = "DELETE FROM persons_organizations WHERE personId = ?";
 
         private static final String DELETE_SIGHTINGS_PERSONS_BY_PERSON_ID
-                = "DELETE FROM Sightings_Persons WHERE personID = ?";
+                = "DELETE FROM sightings_persons WHERE personId = ?";
 
         private static final String SELECT_PERSONS_BY_ORGANIZATION_ID
-                = "SELECT p.personID, p.name, p.description "
-                + "FROM Persons p "
-                + "JOIN Persons_Organizations po ON p.personID = po.personID "
-                + "WHERE po.organizationID = ?";
+                = "SELECT p.personId, p.name, p.description "
+                + "FROM persons p "
+                + "JOIN persons_organizations po ON p.personId = po.personId "
+                + "WHERE po.organizationId = ?";
 
         private static final String SELECT_PERSONS_BY_LOCATION_ID
-                = "SELECT p.personID, p.name, p.description "
-                + "FROM Persons p "
-                + "JOIN Sightings_Persons sp ON p.personID = sp.personID "
-                + "JOIN Sightings s on sp.sightingID = s.sightingID "
-                + "WHERE s.locationID = ?";
+                = "SELECT p.personId, p.name, p.description "
+                + "FROM persons p "
+                + "JOIN sightings_persons sp ON p.personId = sp.personId "
+                + "JOIN sightings s on sp.sightingId = s.sightingId "
+                + "WHERE s.locationId = ?";
         // ====================================
         // SUPERPOWER QUERIES
         // ====================================
         private static final String INSERT_SUPERPOWER
-                = "INSERT INTO Superpowers (name, description) "
+                = "INSERT INTO superpowers (name, description) "
                 + "VALUES (?, ?)";
 
         private static final String DELETE_SUPERPOWER
-                = "DELETE FROM Superpowers WHERE SuperpowerID = ?";
+                = "DELETE FROM superpowers WHERE superpowerId = ?";
 
         private static final String UPDATE_SUPERPOWER
-                = "UPDATE Superpowers SET name = ?, description = ? "
-                + "WHERE superpowerID = ?";
+                = "UPDATE superpowers SET name = ?, description = ? "
+                + "WHERE superpowerId = ?";
 
         private static final String SELECT_SUPERPOWER
-                = "SELECT * FROM Superpowers WHERE superpowerID = ?";
+                = "SELECT * FROM superpowers WHERE superpowerId = ?";
 
         private static final String SELECT_ALL_SUPERPOWERS
-                = "SELECT * FROM Superpowers";
+                = "SELECT * FROM superpowers";
 
         private static final String SELECT_SUPERPOWERS_BY_PERSON_ID
-                = "SELECT sp.superpowerID, sp.name, sp.description "
-                + "FROM Superpowers sp "
-                + "JOIN Persons_Superpowers ps ON sp.superpowerID = ps.superpowerID "
-                + "WHERE ps.personID = ?";
+                = "SELECT sp.superpowerId, sp.name, sp.description "
+                + "FROM superpowers sp "
+                + "JOIN persons_superpowers ps ON sp.superpowerId = ps.superpowerId "
+                + "WHERE ps.personId = ?";
 
         private static final String DELETE_PERSONS_SUPERPOWERS_BY_SUPERPOWER_ID
-                = "DELETE FROM Persons_Superpowers WHERE superpowerID = ?";
+                = "DELETE FROM persons_superpowers WHERE superpowerId = ?";
         // =================================
         // LOCATIONS QUERIES
         // =================================
         private static final String INSERT_LOCATION
-                = "INSERT INTO Locations (name, description, street, city, state, "
+                = "INSERT INTO locations (name, description, street, city, state, "
                 + "country, longitude, latitude) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         private static final String DELETE_LOCATION
-                = "DELETE FROM Locations WHERE locationID = ?";
+                = "DELETE FROM locations WHERE locationId = ?";
 
         private static final String UPDATE_LOCATION
-                = "UPDATE Locations SET name = ?, description = ?, street = ?, city = ?, "
+                = "UPDATE locations SET name = ?, description = ?, street = ?, city = ?, "
                 + "state = ?, country = ?, longitude = ?, latitude = ? "
-                + "WHERE locationID = ?";
+                + "WHERE locationId = ?";
 
         private static final String SELECT_LOCATION
-                = "SELECT * FROM Locations WHERE locationID = ?";
+                = "SELECT * FROM locations WHERE locationId = ?";
 
         private static final String SELECT_ALL_LOCATIONS
-                = "SELECT * FROM Locations";
+                = "SELECT * FROM locations";
 
         private static final String DELETE_SIGHTINGS_BY_LOCATION_ID
-                = "DELETE FROM Sightings WHERE locationID = ?";
+                = "DELETE FROM sightings WHERE locationId = ?";
 
         private static final String SELECT_LOCATIONS_BY_PERSON_ID
-                = "SELECT l.locationID, l.name, l.description, l.street, l.city, "
+                = "SELECT l.locationId, l.name, l.description, l.street, l.city, "
                 + "l.state, l.country, l.longitude, l.latitude "
-                + "FROM Locations l "
-                + "JOIN Sightings s ON l.locationID = s.locationID "
-                + "JOIN Sightings_Persons sp ON s.sightingID = sp.sightingID "
+                + "FROM locations l "
+                + "JOIN sightings s ON l.locationID = s.locationID "
+                + "JOIN sightings_persons sp ON s.sightingID = sp.sightingID "
                 + "WHERE personID = ? "
                 + "GROUP BY locationID";
         // =================================
         // ORGANIZATION QUERIES
         // =================================
         private static final String INSERT_ORGANIZATION
-                = "INSERT INTO Organizations (name, description, phone, email, locationID) "
+                = "INSERT INTO organizations (name, description, phone, email, locationID) "
                 + "VALUES (?, ?, ?, ?, ?)";
 
         private static final String DELETE_ORGANIZATION
-                = "DELETE FROM Organizations WHERE organizationID = ?";
+                = "DELETE FROM organizations WHERE organizationId = ?";
 
         private static final String UPDATE_ORGANIZATION
-                = "UPDATE Organizations SET name = ?, description = ?, "
-                + "phone = ?, email = ?, locationID = ? "
-                + "WHERE organizationID = ?";
+                = "UPDATE organizations SET name = ?, description = ?, "
+                + "phone = ?, email = ?, locationId = ? "
+                + "WHERE organizationId = ?";
 
         private static final String SELECT_ORGANIZATION
-                = "SELECT * FROM Organizations WHERE organizationID = ?";
+                = "SELECT * FROM organizations WHERE organizationId = ?";
 
         private static final String SELECT_ALL_ORGANIZATIONS
-                = "SELECT * FROM Organizations";
+                = "SELECT * FROM organizations";
 
         private static final String SELECT_LOCATION_BY_ORGANIZATION_ID
-                = "SELECT l.locationID, l.name, l.description, l.street, l.city, l.state, "
+                = "SELECT l.locationId, l.name, l.description, l.street, l.city, l.state, "
                 + "l.country, l.longitude, l.latitude FROM Locations l "
-                + "JOIN Organizations o ON l.locationID = o.locationID "
-                + "WHERE o.organizationID = ?";
+                + "JOIN organizations o ON l.locationID = o.locationId "
+                + "WHERE o.organizationId = ?";
 
         private static final String INSERT_PERSONS_ORGANIZATIONS
                 = "INSERT INTO Persons_Organizations (organizationID, personID) "
@@ -193,38 +193,38 @@ public class SuperHeroSightingsDaoDbImpl implements SuperHeroSightingsDao {
                 + "VALUES (?, ?)";
 
         private static final String DELETE_SIGHTING
-                = "DELETE FROM sightings WHERE sightingID = ?";
+                = "DELETE FROM sightings WHERE sightingId = ?";
 
         private static final String UPDATE_SIGHTING
-                = "UPDATE sightings SET locationID = ?, date = ? "
+                = "UPDATE sightings SET locationId = ?, date = ? "
                 + "WHERE sightingID = ?";
 
         private static final String SELECT_SIGHTING
-                = "SELECT * FROM sightings WHERE sightingID = ?";
+                = "SELECT * FROM sightings WHERE sightingId = ?";
 
         private static final String SELECT_ALL_SIGHTINGS
                 = "SELECT * FROM sightings";
 
         private static final String SELECT_PERSONS_BY_SIGHTING_ID
-                = "SELECT p.personID, p.name, p.description "
-                + "FROM Persons p "
-                + "JOIN sightings_persons sp ON p.personID = sp.personID "
-                + "WHERE sp.sightingID = ?";
+                = "SELECT p.personId, p.name, p.description "
+                + "FROM persons p "
+                + "JOIN sightings_persons sp ON p.personId = sp.personId "
+                + "WHERE sp.sightingId = ?";
 
         private static final String SELECT_LOCATION_BY_SIGHTING_ID
-                = "SELECT l.locationID, l.name, l.description, l.street, l.city, "
+                = "SELECT l.locationId, l.name, l.description, l.street, l.city, "
                 + "l.state, l.country, l.longitude, l.latitude FROM locations l "
-                + "JOIN sightings s ON l.locationID = s.locationID "
-                + "WHERE s.sightingID = ?";
+                + "JOIN sightings s ON l.locationId = s.locationId "
+                + "WHERE s.sightingId = ?";
 
         private static final String SELECT_SIGHTINGS_BY_DATE
-                = "SELECT sightingID, date FROM sightings WHERE date = ?";
+                = "SELECT sightingId, date FROM sightings WHERE date = ?";
 
         private static final String INSERT_SIGHTINGS_PERSONS
                 = "INSERT INTO sightings_persons (sightingId, personId) VALUES (?, ?)";
 
         private static final String DELETE_SIGHTINGS_PERSONS_BY_SIGHTING_ID
-                = "DELETE FROM Sightings_Persons WHERE sightingId = ?";
+                = "DELETE FROM sightings_persons WHERE sightingId = ?";
 
         private static final String SELECT_LAST_TEN_SIGHTINGS
                 = "SELECT * FROM sightings "
