@@ -1,6 +1,6 @@
-# IntroToWebDevolpment
-### these are a couple of projects I've worked on throughout the length of my Java course
-### At UGA Full Stack Web Development / The Software Guild
+# Intro To Web Devolpment
+### These are projects I've worked on throughout the length of my Java 
+### Full Stack Web Development  @ UGA / The Software Guild.        
 ---
 *   [Class Roster](https://github.com/Raulito1/IntroToWebDevolpment/tree/master/ClassRoster/ClassRoster)Class Roster java project to keep track of a student taking a course assign the student an id number then we use CRUD(Create,Read,Update,Delete) for the rest of project
 *   [Flooring Mastery](https://github.com/Raulito1/IntroToWebDevolpment/tree/master/AdvancedJava) Created a Java Console app to generate your order, figure up cost of Labor, Materials, Taxes depending on state, and then will ask to store the data
