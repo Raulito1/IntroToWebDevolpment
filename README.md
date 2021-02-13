@@ -1,7 +1,7 @@
 # IntroToWebDevolpment
 these are a couple of projects ive worked on throughout the length of my Java course
 At UGA Full Stack Web Development / The Software Guild
-*   Class Roster 
+*   [Class Roster](https://github.com/Raulito1/IntroToWebDevolpment/tree/master/ClassRoster/ClassRoster)
 *   FLooring Mastery
 *   Dvd Library
 *   Vending Machine
